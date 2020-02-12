@@ -7,6 +7,13 @@
   "directories": {
     "test": "test"
   },
+  "scripts": {
+    "info": "echo $npm_package_name $npm_package_version && truffle version && which truffle",
+    "compile": "truffle compile",
+    "deploy": "truffle migrate",
+    "clean-and-deploy": "truffle migrate --reset",
+    "test": "truffle test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dapps-dev-club/smart-contract-dev-patterns-workshop.git"
