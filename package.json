@@ -1,0 +1,34 @@
+{
+  "name": "smart-contract-dev-patterns-workshop",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Smart Contract Development Patterns Workshop",
+  "main": "contracts/Bolsilmon.sol",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dapps-dev-club/smart-contract-dev-patterns-workshop.git"
+  },
+  "keywords": [
+    "solidity",
+    "smart contracts",
+    "development patterns",
+    "workshop"
+  ],
+  "author": "bguiz",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dapps-dev-club/smart-contract-dev-patterns-workshop/issues"
+  },
+  "homepage": "https://github.com/dapps-dev-club/smart-contract-dev-patterns-workshop#readme",
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "0.5.4",
+    "solc": "0.5.16",
+    "truffle": "5.1.11"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "2.5.0"
+  }
+}
