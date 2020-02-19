@@ -20,6 +20,15 @@ contract Bolsilmon {
   mapping(uint256 => address) public monCreators;
 
   // modifiers
+  modifier minPayment(
+    uint256 amount
+  ) {
+    require(
+      msg.value >= amount,
+      "You need to pay more"
+    );
+    _;
+  }
 
   // functions
   constructor()
