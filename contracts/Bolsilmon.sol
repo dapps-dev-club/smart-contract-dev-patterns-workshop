@@ -9,6 +9,10 @@ contract Bolsilmon {
   }
 
   // events
+  event MonCreate (
+    uint256 indexed monId,
+    address indexed owner
+  );
 
   // state variables
   uint256 public numMons = 0;
