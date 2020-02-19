@@ -19,6 +19,8 @@ contract Bolsilmon {
   mapping(uint256 => Mon) public mons;
   mapping(uint256 => address) public monCreators;
 
+  uint256 public createPrice = 0.1 ether;
+
   // modifiers
   modifier minPayment(
     uint256 amount
@@ -42,6 +44,7 @@ contract Bolsilmon {
   )
     external
     payable
+    minPayment(createPrice)
     returns(uint256 monId)
   {
     monId = ++numMons;
@@ -52,5 +55,10 @@ contract Bolsilmon {
     );
     mons[monId] = newMon;
     monCreators[monId] = msg.sender;
+
+    emit MonCreate(
+      monId,
+      msg.sender
+    );
   }
 }
