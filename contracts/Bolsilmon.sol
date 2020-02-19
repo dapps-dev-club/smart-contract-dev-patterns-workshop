@@ -11,6 +11,9 @@ contract Bolsilmon {
   // events
 
   // state variables
+  uint256 public numMons = 0;
+  mapping(uint256 => Mon) public mons;
+  mapping(uint256 => address) public monCreators;
 
   // modifiers
 
