@@ -23,4 +23,21 @@ contract Bolsilmon {
   {
     // do nothing
   }
+
+  function createMon(
+    bytes32 geneSeed
+  )
+    external
+    payable
+    returns(uint256 monId)
+  {
+    monId = ++numMons;
+    Mon memory newMon = Mon(
+      block.number,
+      false,
+      geneSeed
+    );
+    mons[monId] = newMon;
+    monCreators[monId] = msg.sender;
+  }
 }
