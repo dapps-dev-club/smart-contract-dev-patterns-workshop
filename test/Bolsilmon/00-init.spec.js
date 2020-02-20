@@ -8,4 +8,7 @@ contract('Bolsilmon - initial state', () => {
       await Bolsilmon.deployed();
     });
   });
+
+  it('initial state', async () => {
+  });
 });
