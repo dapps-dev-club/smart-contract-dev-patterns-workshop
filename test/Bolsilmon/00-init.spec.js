@@ -13,5 +13,8 @@ contract('Bolsilmon - initial state', () => {
     const inst = await Bolsilmon.deployed();
 
     const numMons = await inst.numMons.call();
+
+    assert.equal(numMons.toString(), '0',
+      'Unexpected numMons initial value');
   });
 });
