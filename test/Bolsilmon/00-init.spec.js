@@ -11,5 +11,7 @@ contract('Bolsilmon - initial state', () => {
 
   it('initial state', async () => {
     const inst = await Bolsilmon.deployed();
+
+    const numMons = await inst.numMons.call();
   });
 });
