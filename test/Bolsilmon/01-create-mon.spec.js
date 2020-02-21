@@ -20,5 +20,16 @@ contract('Bolsilmon - createMon', (accounts) => {
 
   it('should bar when not paying enough', async () => {
     const inst = await Bolsilmon.deployed();
+
+    await expectRevert(
+      inst.createMon(
+        geneSeedBytes,
+        {
+          from: account1,
+          value: web3.utils.toWei('0.09', 'ether'),
+        },
+      ),
+      'You need to pay more',
+    );
   });
 });
