@@ -43,5 +43,9 @@ contract('Bolsilmon - createMon', (accounts) => {
         value: web3.utils.toWei('0.11', 'ether'),
       },
     );
+
+    const numMons = await inst.numMons.call();
+
+    assert.equal(numMons.toString(), '1');
   });
 });
