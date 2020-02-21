@@ -47,5 +47,10 @@ contract('Bolsilmon - createMon', (accounts) => {
     const numMons = await inst.numMons.call();
 
     assert.equal(numMons.toString(), '1');
+
+    const monCreator = await inst.monCreators.call(new BN(1));
+
+    assert.equal(monCreator, account1,
+      'creator unexpected value');
   });
 });
