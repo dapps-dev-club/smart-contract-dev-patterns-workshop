@@ -32,4 +32,8 @@ contract('Bolsilmon - createMon', (accounts) => {
       'You need to pay more',
     );
   });
+
+  it('should allow', async () => {
+    const inst = await Bolsilmon.deployed();
+  });
 });
