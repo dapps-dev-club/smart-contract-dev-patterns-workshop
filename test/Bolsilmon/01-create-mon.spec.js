@@ -35,5 +35,13 @@ contract('Bolsilmon - createMon', (accounts) => {
 
   it('should allow', async () => {
     const inst = await Bolsilmon.deployed();
+
+    await inst.createMon(
+      geneSeedBytes,
+      {
+        from: account1,
+        value: web3.utils.toWei('0.11', 'ether'),
+      },
+    );
   });
 });
