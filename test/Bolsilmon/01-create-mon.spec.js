@@ -52,5 +52,14 @@ contract('Bolsilmon - createMon', (accounts) => {
 
     assert.equal(monCreator, account1,
       'creator unexpected value');
+
+    const mon = await inst.mons.call(new BN(1));
+
+    assert.ok(mon.createBlock > 0,
+      'createBlock not set');
+    assert.equal(mon.born, false,
+      'born unexpected value');
+    assert.equal(mon.genes, geneSeed,
+      'genes unexpected value');
   });
 });
