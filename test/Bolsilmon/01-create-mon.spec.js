@@ -17,4 +17,8 @@ contract('Bolsilmon - createMon', (accounts) => {
     '0x0102030405060708090a0b0c0d0e0f100102030405060708090a0b0c0d0e0f10';
   const geneSeedBytes =
     web3.utils.hexToBytes(geneSeed);
+
+  it('should bar when not paying enough', async () => {
+    const inst = await Bolsilmon.deployed();
+  });
 });
