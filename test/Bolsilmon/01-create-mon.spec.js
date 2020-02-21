@@ -8,5 +8,8 @@ const {
 
 const Bolsilmon = artifacts.require('Bolsilmon');
 
-contract('Bolsilmon - createMon', () => {
+contract('Bolsilmon - createMon', (accounts) => {
+  const [
+    account1,
+  ] = accounts;
 });
