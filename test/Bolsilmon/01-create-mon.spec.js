@@ -36,7 +36,7 @@ contract('Bolsilmon - createMon', (accounts) => {
   it('should allow', async () => {
     const inst = await Bolsilmon.deployed();
 
-    await inst.createMon(
+    const txInfo = await inst.createMon(
       geneSeedBytes,
       {
         from: account1,
@@ -61,5 +61,14 @@ contract('Bolsilmon - createMon', (accounts) => {
       'born unexpected value');
     assert.equal(mon.genes, geneSeed,
       'genes unexpected value');
+
+    expectEvent(
+      txInfo,
+      'MonCreate',
+      {
+        monId: '1',
+        owner: account1,
+      },
+    );
   });
 });
