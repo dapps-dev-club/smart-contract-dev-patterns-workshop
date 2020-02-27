@@ -84,5 +84,12 @@ contract Bolsilmon {
       block.number > mon.createBlock + 1 + birthWaitBlocks,
       "You must wait longer"
     );
+
+    mon.genes = keccak256(
+      abi.encodePacked(
+        mon.genes,
+        blockhash(mon.createBlock + birthWaitBlocks)
+      )
+    );
   }
 }
