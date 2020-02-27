@@ -93,5 +93,10 @@ contract Bolsilmon {
     );
 
     mon.born = true;
+
+    emit MonBirth(
+      monId,
+      msg.sender
+    );
   }
 }
