@@ -24,6 +24,8 @@ contract Bolsilmon {
   mapping(uint256 => Mon) public mons;
   mapping(uint256 => address) public monCreators;
 
+  uint256 public birthWaitBlocks = 1;
+
   uint256 public createPrice = 0.1 ether;
 
   // modifiers
