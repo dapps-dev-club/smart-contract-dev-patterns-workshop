@@ -14,6 +14,11 @@ contract Bolsilmon {
     address indexed owner
   );
 
+  event MonBirth (
+    uint256 indexed monId,
+    address indexed owner
+  );
+
   // state variables
   uint256 public numMons = 0;
   mapping(uint256 => Mon) public mons;
