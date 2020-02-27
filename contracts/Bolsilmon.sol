@@ -74,5 +74,9 @@ contract Bolsilmon {
   )
     external
   {
+    require(
+      monCreators[monId] == msg.sender,
+      "You are not the creator"
+    );
   }
 }
