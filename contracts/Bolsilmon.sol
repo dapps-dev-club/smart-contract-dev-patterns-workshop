@@ -78,5 +78,11 @@ contract Bolsilmon {
       monCreators[monId] == msg.sender,
       "You are not the creator"
     );
+
+    Mon storage mon = mons[monId];
+    require(
+      block.number > mon.createBlock + 1 + birthWaitBlocks,
+      "You must wait longer"
+    );
   }
 }
