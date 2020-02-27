@@ -68,4 +68,11 @@ contract Bolsilmon {
       msg.sender
     );
   }
+
+  function birthMon(
+    uint256 monId
+  )
+    external
+  {
+  }
 }
