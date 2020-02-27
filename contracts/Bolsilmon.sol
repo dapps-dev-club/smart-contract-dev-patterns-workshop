@@ -91,5 +91,7 @@ contract Bolsilmon {
         blockhash(mon.createBlock + birthWaitBlocks)
       )
     );
+
+    mon.born = true;
   }
 }
