@@ -104,5 +104,16 @@ contract('Bolsilmon - birthMon', (accounts) => {
     const numMons = await inst.numMons.call();
     assert.equal(numMons.toString(), '1',
       'unexpected numMons');
+
+    const mon = await inst.mons.call(new BN(1));
+
+    assert.ok(mon.createBlock > 0,
+      'createBlock not set');
+    assert.equal(mon.born, true,
+      'born unexpected value');
+    assert.notEqual(mon.genes, geneSeed,
+      'genes unexpected value');
+    // TODO potentially also compute the hash here too,
+    // instead of merely checking that it has changed
   });
 });
