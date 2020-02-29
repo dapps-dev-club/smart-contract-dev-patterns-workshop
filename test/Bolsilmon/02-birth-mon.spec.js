@@ -115,5 +115,9 @@ contract('Bolsilmon - birthMon', (accounts) => {
       'genes unexpected value');
     // TODO potentially also compute the hash here too,
     // instead of merely checking that it has changed
+
+    const monCreator = await inst.monCreators(new BN(1));
+    assert.equal(monCreator, account1,
+      'creator should remain same after mon is born');
   });
 });
