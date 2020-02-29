@@ -44,4 +44,9 @@ contract('Bolsilmon - birthMon', (accounts) => {
       'You are not the creator',
     );
   });
+
+  it('should bar when did not wait for long enough', async () => {
+    const inst = await Bolsilmon.deployed();
+
+  });
 });
