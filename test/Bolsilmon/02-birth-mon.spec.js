@@ -48,5 +48,10 @@ contract('Bolsilmon - birthMon', (accounts) => {
   it('should bar when did not wait for long enough', async () => {
     const inst = await Bolsilmon.deployed();
 
+    const birthWaitBlocks = await inst.birthWaitBlocks.call();
+    if (birthWaitBlocks.lt(1)) {
+      console.warn('skipping redundant test for birthWaitBlocks');
+      return true;
+    }
   });
 });
