@@ -92,5 +92,17 @@ contract('Bolsilmon - birthMon', (accounts) => {
     const inst = await Bolsilmon.deployed();
 
     await testUtil.waitBeforeBirth(inst);
+
+    const txInfo = await inst.birthMon(
+      new BN(1),
+      {
+        from: account1,
+        value: new BN(0),
+      },
+    );
+
+    const numMons = await inst.numMons.call();
+    assert.equal(numMons.toString(), '1',
+      'unexpected numMons');
   });
 });
