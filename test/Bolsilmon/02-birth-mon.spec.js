@@ -53,5 +53,16 @@ contract('Bolsilmon - birthMon', (accounts) => {
       console.warn('skipping redundant test for birthWaitBlocks');
       return true;
     }
+
+    await expectRevert(
+      inst.birthMon(
+        new BN(1),
+        {
+          from: account1,
+          value: new BN(0),
+        },
+      ),
+      'You must wait longer',
+    );
   });
 });
