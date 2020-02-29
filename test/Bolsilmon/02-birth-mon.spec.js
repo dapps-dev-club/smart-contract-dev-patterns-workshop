@@ -68,5 +68,17 @@ contract('Bolsilmon - birthMon', (accounts) => {
     const numMons = await inst.numMons.call();
     assert.equal(numMons.toString(), '1',
       'numMons unexpected value');
+
+    const mon = await inst.mons.call(new BN(1));
+
+    // mon is still created
+    assert.ok(mon.createBlock > 0,
+      'createBlock not set');
+    // but mon is not born
+    assert.equal(mon.born, false,
+      'born unexpected value');
+    // since mon is not born, its genes are still the seed value
+    assert.equal(mon.genes, geneSeed,
+      'genes unexpected value');
   });
 });
