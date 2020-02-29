@@ -21,5 +21,12 @@ contract('Bolsilmon - birthMon', (accounts) => {
   before(async () => {
     const inst = await Bolsilmon.deployed();
 
+    await inst.createMon(
+      web3.utils.hexToBytes(geneSeed),
+      {
+        from: account1,
+        value: web3.utils.toWei('0.11', 'ether'),
+      },
+    );
   });
 });
