@@ -18,4 +18,8 @@ contract('Bolsilmon - birthMon', (accounts) => {
   const geneSeed =
     '0x0102030405060708090a0b0c0d0e0f100102030405060708090a0b0c0d0e0f10';
 
+  before(async () => {
+    const inst = await Bolsilmon.deployed();
+
+  });
 });
