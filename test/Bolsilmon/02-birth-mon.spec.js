@@ -87,4 +87,10 @@ contract('Bolsilmon - birthMon', (accounts) => {
     assert.equal(monCreator, account1,
       'creator should remain same before mon is born');
   });
+
+  it('should allow', async () => {
+    const inst = await Bolsilmon.deployed();
+
+    await testUtil.waitBeforeBirth(inst);
+  });
 });
