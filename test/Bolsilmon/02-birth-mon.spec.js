@@ -119,5 +119,14 @@ contract('Bolsilmon - birthMon', (accounts) => {
     const monCreator = await inst.monCreators(new BN(1));
     assert.equal(monCreator, account1,
       'creator should remain same after mon is born');
+
+    expectEvent(
+      txInfo,
+      'MonBirth',
+      {
+        monId: '1',
+        owner: account1,
+      },
+    );
   });
 });
