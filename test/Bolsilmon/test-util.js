@@ -17,3 +17,7 @@ async function waitBeforeAction(inst, waitActionVariableName) {
     // await time.advanceBlockTo(waitedBlock);
   }
 }
+
+async function waitBeforeBirth(inst) {
+  return waitBeforeAction(inst, 'birthWaitBlocks');
+}
