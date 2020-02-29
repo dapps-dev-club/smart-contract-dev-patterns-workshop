@@ -64,5 +64,9 @@ contract('Bolsilmon - birthMon', (accounts) => {
       ),
       'You must wait longer',
     );
+
+    const numMons = await inst.numMons.call();
+    assert.equal(numMons.toString(), '1',
+      'numMons unexpected value');
   });
 });
