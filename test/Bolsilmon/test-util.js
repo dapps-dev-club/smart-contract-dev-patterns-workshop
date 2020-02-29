@@ -21,3 +21,7 @@ async function waitBeforeAction(inst, waitActionVariableName) {
 async function waitBeforeBirth(inst) {
   return waitBeforeAction(inst, 'birthWaitBlocks');
 }
+
+module.exports = {
+  waitBeforeBirth,
+};
