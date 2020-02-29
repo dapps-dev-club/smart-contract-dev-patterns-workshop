@@ -80,5 +80,9 @@ contract('Bolsilmon - birthMon', (accounts) => {
     // since mon is not born, its genes are still the seed value
     assert.equal(mon.genes, geneSeed,
       'genes unexpected value');
+
+    const monCreator = await inst.monCreators(new BN(1));
+    assert.equal(monCreator, account1,
+      'creator should remain same before mon is born');
   });
 });
