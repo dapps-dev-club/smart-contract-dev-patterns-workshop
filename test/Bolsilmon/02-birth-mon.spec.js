@@ -33,12 +33,15 @@ contract('Bolsilmon - birthMon', (accounts) => {
   it('should bar when not creator', async () => {
     const inst = await Bolsilmon.deployed();
 
-    await inst.birthMon(
-      new BN(1),
-      {
-        from: account2,
-        value: new BN(0),
-      },
+    await expectRevert(
+      inst.birthMon(
+        new BN(1),
+        {
+          from: account2,
+          value: new BN(0),
+        },
+      ),
+      'You are not the creator',
     );
   });
 });
