@@ -29,4 +29,9 @@ contract('Bolsilmon - birthMon', (accounts) => {
       },
     );
   });
+
+  it('should bar when not creator', async () => {
+    const inst = await Bolsilmon.deployed();
+
+  });
 });
