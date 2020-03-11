@@ -129,4 +129,9 @@ contract('Bolsilmon - birthMon', (accounts) => {
       },
     );
   });
+
+  it('should bar when attempt to birth same mon twice', async () => {
+    const inst = await Bolsilmon.deployed();
+
+  });
 });
