@@ -133,5 +133,15 @@ contract('Bolsilmon - birthMon', (accounts) => {
   it('should bar when attempt to birth same mon twice', async () => {
     const inst = await Bolsilmon.deployed();
 
+    await expectRevert(
+      inst.birthMon(
+        new BN(1),
+        {
+          from: account1,
+          value: new BN(0),
+        },
+      ),
+      'Mon may not be born twice',
+    );
   });
 });
