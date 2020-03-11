@@ -80,6 +80,12 @@ contract Bolsilmon {
     );
 
     Mon storage mon = mons[monId];
+
+    require(
+      mon.born == false,
+      "Mon may not be born twice"
+    );
+
     require(
       block.number > mon.createBlock + 1 + birthWaitBlocks,
       "You must wait longer"
